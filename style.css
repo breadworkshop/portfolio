@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html { scroll-behavior: smooth; }
+body { 
+  font-family: 'Poppins', sans-serif; 
+  margin:0; padding:0; 
+  color:#333; 
+  background:#fff0f2; 
+  line-height:1.8; 
+}
+
+/* Header */
+header {
+  background:#ef907c; 
+  color:white; 
+  text-align:center; 
+  padding:2rem 1rem;
+}
+.header-container { 
+  display:flex; flex-wrap:wrap; 
+  align-items:center; justify-content:center; 
+  gap:1.5rem; 
+}
+
+/* Profile Flip Animation — 220px */
+.profile-wrapper { 
+  width:220px; 
+  height:220px; 
+  perspective:1000px; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+}
+.profile-inner { 
+  width:100%; height:100%; 
+  position:relative; 
+  transform-style:preserve-3d; 
+  transition:transform 0.6s ease-in-out; 
+}
+.profile-wrapper:hover .profile-inner { transform:rotateY(180deg); }
+
+.profile-front, .profile-back { 
+  position:absolute; 
+  width:100%; height:100%; 
+  border-radius:50%; 
+  object-fit:cover; 
+  border:3px solid #ef907c; 
+  backface-visibility:hidden; 
+  top:0; left:0; 
+}
+.profile-back { transform:rotateY(180deg); }
+
+.header-text h1 { 
+  margin:0 0 0.3rem 0; 
+  font-size:2.5rem; 
+  font-weight:600; 
+}
+.header-subtitle { 
+  font-size:1.1rem; 
+  font-weight:300; 
+  color:#fff5f5; 
+  margin:0; 
+}
+.header-text p:last-child { 
+  margin-top:0.8rem; 
+  font-size:1.1rem; 
+  font-weight:600; 
+  color:#fff5f5; 
+}
+
+/* Nav */
+nav { 
+  background:#f7c2b3; 
+  text-align:center; 
+  padding:0.5rem 0; 
+}
+nav a { 
+  color:white; 
+  text-decoration:none; 
+  margin:0 20px; 
+  font-weight:700; 
+  font-size:small; 
+}
+nav a:hover { text-decoration:underline; }
+
+/* Sections */
+section { 
+  padding:2rem 1rem; 
+  max-width:900px; 
+  margin:auto; 
+}
+h2 { 
+  color:#ef907c; 
+  margin-bottom:1rem; 
+  border-bottom:2px solid #ef907c; 
+  display:inline-block; 
+  font-weight:600; 
+}
+
+/* About */
+.about-item { 
+  display:flex; 
+  align-items:flex-start; 
+  gap:1rem; 
+  margin-bottom:1.5rem; 
+}
+.about-icon img { 
+  width:50px; 
+  height:50px; 
+  object-fit:contain; 
+}
+
+/* Justified */
+.about-item p { 
+  margin:0; 
+  line-height:1.6; 
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+/* Projects */
+.project-gallery { 
+  display:flex; 
+  flex-direction:column; 
+  gap:1.5rem; 
+}
+.project-card { 
+  position:relative; 
+  width:100%; 
+  height:300px; 
+  overflow:hidden; 
+  cursor:pointer; 
+  border-radius:15px; 
+  border:4px solid #ef907c; 
+  background:#fff; 
+}
+.project-card img { 
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
+  display:block; 
+  border-radius:10px; 
+  transition:transform 0.3s ease; 
+}
+.project-card:hover img { transform:scale(1.05); }
+
+/* Hover Overlay */
+.project-overlay {
+  position:absolute; 
+  bottom:0; left:0; right:0; 
+  background:rgba(239,144,124,0.85); 
+  color:white; 
+  padding:1rem;
+  opacity:0; 
+  transform:translateY(20px); 
+  transition:opacity 0.3s ease, transform 0.3s ease; 
+  border-radius:10px;
+}
+.project-card:hover .project-overlay { 
+  opacity:1; 
+  transform:translateY(0); 
+}
+.project-overlay h3 { 
+  margin:0 0 0.5rem 0; 
+  font-size:1.2rem; 
+}
+.project-overlay p { 
+  margin:0; 
+  font-size:0.9rem; 
+}
+
+/* Layout & Illustration */
+.project-layout-illustration { 
+  text-align:center; 
+  margin-top:1rem; 
+}
+.project-layout-illustration h3 { 
+  font-size:1.5rem; 
+  color:#ef907c; 
+  margin-bottom:0.2rem; 
+}
+.project-layout-illustration p { 
+  font-size:1rem; 
+  color:#ef907c; 
+  margin-bottom:1rem; 
+}
+
+.layout-grid { 
+  display:grid; 
+  grid-template-columns:repeat(4,1fr); 
+  grid-auto-rows:100px; 
+  gap:1rem; 
+}
+.layout-grid button { 
+  width:100%; 
+  height:100%; 
+  font-size:1.2rem; 
+  font-weight:600; 
+  border-radius:12px; 
+  border:none; 
+  background:#ef907c; 
+  color:white; 
+  cursor:pointer; 
+  transition:background 0.25s ease;
+}
+
+/* 🔥 Darken on hover (new feature) */
+.layout-grid button:hover {
+  background:#d97d69;
+}
+
+/* Lightbox */
+.lightbox { 
+  display:none; 
+  position:fixed; 
+  top:0; left:0; 
+  width:100%; 
+  height:100%; 
+  background:rgba(0,0,0,0.85); 
+  justify-content:center; 
+  align-items:center; 
+  z-index:9999; 
+}
+.lightbox[aria-hidden="false"] { display:flex; }
+
+.lightbox-content { 
+  position:relative; 
+  width:100%; 
+  height:100%; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+}
+
+/* Image—contain */
+.lightbox-img {
+  max-width:100vw;
+  max-height:100vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+  transition:opacity 0.4s ease;
+}
+
+/* Close */
+.lightbox .close { 
+  position:absolute; 
+  top:10px; 
+  right:10px; 
+  font-size:2.5rem; 
+  color:white; 
+  cursor:pointer; 
+}
+
+/* Arrows */
+.lightbox-nav { 
+  position:absolute; 
+  top:50%; 
+  transform:translateY(-50%); 
+  background:rgba(239,144,124,0.9); 
+  border:none; 
+  color:white; 
+  font-size:2.5rem; 
+  padding:0.6rem 1.2rem; 
+  cursor:pointer; 
+  border-radius:8px; 
+  z-index:10000; 
+}
+#prev { left:2%; }
+#next { right:2%; }
+#prev:hover, #next:hover { background:rgba(239,144,124,1); }
+
+/* CONTACT — LEFT ALIGNED + PROPORTIONATE ICONS */
+.contact-row {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:1.2rem;
+  margin-top:1.5rem;
+}
+
+.contact-icon img {
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.contact-row .email-btn {
+  padding:0.8rem 1rem;
+  background:#ef907c;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* Footer */
+footer { 
+  text-align:center; 
+  padding:1rem; 
+  background:#ef907c; 
+  color:white; 
+  margin-top:2rem; 
+  font-weight:400; 
+  font-size:0.9rem; 
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .header-container { 
+    flex-direction:column; 
+    text-align:center; 
+  }
+
+  .project-card { height:220px; }
+
+  .lightbox-img {
+    max-height:100dvh;
+    max-width:100vw;
+  }
+
+  #prev { left:3%; }
+  #next { right:3%; }
+
+  .lightbox-nav { 
+    font-size:1.8rem; 
+    padding:0.4rem 0.8rem; 
+  }
+
+  .contact-row {
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bread | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="title.png" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="profile-wrapper">
+        <div class="profile-inner" aria-hidden="false">
+          <img src="profile1.jpg" alt="Profile front" class="profile-front">
+          <img src="profile2.png" alt="Profile back" class="profile-back">
+        </div>
+      </div>
+      <div class="header-text">
+        <h1>Arman Vincent David</h1>
+        <p class="header-subtitle">Breadworks Creative Services</p>
+        <p>Artist | Designer | Leader</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <main>
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-item">
+        <div class="about-icon"><img src="icon1.png" alt="Experience Icon"></div>
+        <p>Arman, better known as his artist persona 'Bread', is an artist, designer, and leader in the creative field with over five years of professional experience in multiple creative and corporate industries. He is currently the Chief Creative Officer for Uy Records and Entertainment in charge of marketing and creative teams within the music and entertainment industry.</p>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon"><img src="icon2.png" alt="Creativity Icon"></div>
+        <p>Bread believes that creativity is the application of artistic skill and knowledge interwoven with ones personal experiences and unique taste. This philosophy makes him highly adaptable in bringing creativity to various industries while staying true to his flair.</p>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon"><img src="icon3.png" alt="Music Icon"></div>
+        <p>Outside corporate work, Bread writes lore and fictional stories to pass time, and creates electronic music when he feels like it. He also supports non-profit interest groups by providing creative services and mentoring budding creatives.</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-gallery">
+        <!-- Project 1 -->
+        <div class="project-card" data-imgs='["project1a.jpg","project1b.jpg"]' tabindex="0" role="button" aria-pressed="false">
+          <img src="project1a.jpg" alt="Portfolio Website">
+          <div class="project-overlay">
+            <h3>Heavy Metal Wings</h3>
+            <p>A live celebration event joining Kpop and Rock communities. Bread worked as project manager and creative lead under Uy Records & Entertainment.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 (15 PNGs) -->
+        <div class="project-card" data-imgs='["project2a.png","project2b.png","project2c.png","project2d.png","project2e.png","project2f.png","project2g.png","project2h.png","project2i.png","project2j.png","project2k.png","project2l.png","project2m.png","project2n.png","project2o.png"]' tabindex="0" role="button" aria-pressed="false">
+          <img src="project2-cover.jpg" alt="COSMO Project">
+          <div class="project-overlay">
+            <h3>The COSMO Project</h3>
+            <p>A long-spanning event series celebrating the birthdays of Kpop girl group tripleS members. Bread designed collectible cards for the event organized by tripleS Philippines.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 (6 PNGs) -->
+        <div class="project-card" data-imgs='["project3a.png","project3b.png","project3c.png","project3d.png","project3e.png","project3f.png"]' tabindex="0" role="button" aria-pressed="false">
+          <img src="project3-cover.jpg" alt="LOONAverse Series">
+          <div class="project-overlay">
+            <h3>The LOONAverse Series</h3>
+            <p>A personal project by Bread, encapsulating the essence of Kpop group LOONA's music into digital stained glass art pieces.</p>
+          </div>
+        </div>
+
+        <!-- Layout & Illustration Section (untouched) -->
+        <div class="project-layout-illustration">
+          <h3>Layout & Illustration</h3>
+          <p>Choose a number to view</p>
+          <div class="layout-grid">
+            <button data-img="layout01.jpg">01</button>
+            <button data-img="layout02.jpg">02</button>
+            <button data-img="layout03.jpg">03</button>
+            <button data-img="layout04.jpg">04</button>
+            <button data-img="layout05.jpg">05</button>
+            <button data-img="layout06.jpg">06</button>
+            <button data-img="layout07.jpg">07</button>
+            <button data-img="layout08.jpg">08</button>
+            <button data-img="layout09.jpg">09</button>
+            <button data-img="layout10.jpg">10</button>
+            <button data-img="layout11.jpg">11</button>
+            <button data-img="layout12.jpg">12</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (updated: icons + email last) -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Let's work together!</p>
+
+      <div class="contact-row">
+        <a href="https://www.facebook.com/breadtinapayppang" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="Twitter">
+          <img src="facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://x.com/nyorkmachine" target="_blank" rel="noopener noreferrer" class="contact-icon" aria-label="Instagram">
+          <img src="twitter.png" alt="twitter">
+        </a>
+
+        <a href="mailto:johndoe@example.com" 
+       class="email-btn copy-email" 
+       data-email="johndoe@example.com">breadworkshop.ofcl@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-content" role="document">
+      <span class="close" aria-label="Close">&times;</span>
+      <img class="lightbox-img" src="" alt="Project image">
+      <button id="prev" class="lightbox-nav" aria-label="Previous image">&lt;</button>
+      <button id="next" class="lightbox-nav" aria-label="Next image">&gt;</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Arman David | 🍞Carefully baked using HTML, CSS, & JS</p>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
